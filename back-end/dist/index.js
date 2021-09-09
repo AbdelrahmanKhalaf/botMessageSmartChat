@@ -42,10 +42,9 @@ const passport_1 = __importDefault(require("passport"));
 const error_1 = require("./errors/error");
 const getIDUser_1 = require("./socket/getIDUser");
 const twitterApp_1 = require("./twitter/twitterApp");
-const stripe = require('stripe')(config_1.default.SecretKeyPyment);
 const router = express_1.Router();
 mongoose_1.default
-    .connect(``, {
+    .connect(`mongodb+srv://abdo2020:01123689625@temwork-vxavl.mongodb.net/botChat?retryWrites=true&w=majority`, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,

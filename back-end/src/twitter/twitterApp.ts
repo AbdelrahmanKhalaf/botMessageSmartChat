@@ -88,8 +88,8 @@ export function userConection(socket: Socket) {
                 //verfiy access user in twiiter 
                 appConfig.access_token_key = acsess.access_token;
                 appConfig.access_token_secret = acsess.access_token_seacret;
-                twitter_oauth.access_token_key = acsess.access_token;
-                twitter_oauth.access_token_secret = acsess.access_token_seacret;
+                twitter_oauth.token = acsess.access_token;
+                twitter_oauth.token_secret = acsess.access_token_seacret;
                 //verfiy access user in webhook 
                 appAutohookConfig.token = acsess.access_token;
                 appAutohookConfig.token_secret = acsess.access_token_seacret;
@@ -477,44 +477,43 @@ export function userConection(socket: Socket) {
                 }
                 let verifyCredentialsResult: any = await verifyCredentials();
                 console.log(verifyCredentialsResult.id_str + 'onley verify');
-                var WEBHOOK_URL = 'https://amaz.sa/webhooks/twitter/'
+                var WEBHOOK_URL = 'http://localhost:3000/webhook/939532723542257665'
 
 
                 // // request options
                 // var request_options = {
-                //   url: 'https://api.twitter.com/1.1/account_activity/webhooks.json',
-                //   oauth: twitter_oauth,
-                //   headers: {
-                //     'Content-type': 'application/x-www-form-urlencoded'
-                //   },
-                //   form: {
-                //     url: WEBHOOK_URL
-                //   }
+                //     method: 'POST',
+                //     url: 'https://api.twitter.com/1.1/account_activity/webhooks.json',
+                //     oauth: twitter_oauth,
+                //     headers: "Content-Type: application/x-www-form-urlencoded",
+                //     form: {
+                //         url: WEBHOOK_URL
+                //     }
                 // }
 
                 // // POST request to create webhook config
                 // request.post(request_options, function (error, response, body) {
-                //   console.log(body)
+                //     console.log(body)
                 // })
-                function registerHook(url: any) {
-                    return new Promise(async (resolve, reject) => {
-                        const twitterApi = new Twit(twitter_oauth)
-                        try {
-                            const result = await twitterApi.get("account_activity/webhooks", url)
-                            resolve(result);
-                        }
-                        catch (error) {
-                            console.log("ERROR", error)
-                            reject(error)
-                        }
+                // function registerHook(url: any) {
+                //     return new Promise(async (resolve, reject) => {
+                //         const twitterApi = new Twit(twitter_oauth)
+                //         try {
+                //             const result = await twitterApi.get("account_activity/webhooks", url)
+                //             resolve(result);
+                //         }
+                //         catch (error) {
+                //             console.log("ERROR", error)
+                //             reject(error)
+                //         }
 
-                    })
-                }
+                //     })
+                // }
 
 
 
-                const res = await registerHook(WEBHOOK_URL)
-                console.log(res);
+                // const res = await registerHook(WEBHOOK_URL)
+                // console.log(res);
 
                 // Remove Existing Webhook
                 // await webhook.removeWebhooks();
