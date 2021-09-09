@@ -22,7 +22,7 @@ import { userConection, USERConection } from "./twitter/twitterApp";
 const router: Router = Router()
 mongoose
   .connect(
-    `mongodb+srv://abdo2020:01123689625@temwork-vxavl.mongodb.net/botChat?retryWrites=true&w=majority`,
+    ``,
     {
       useNewUrlParser: true,
       useCreateIndex: true,
