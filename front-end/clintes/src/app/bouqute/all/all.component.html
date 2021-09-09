@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="col-12">
+    <p *ngIf="errorMessage" class="alert alert-danger">{{errorMessage}}</p>
+    <p *ngIf="message" class="alert alert-success">{{message}}</p>
+
+    <div>
+      <h4 class="d-inline card-intro-title"> Our Bouquets</h4>
+      <p class="color-muted">For the code click on above code icon</p>
+
+    </div>
+    <div class="row">
+      <div class="col-lg-4" *ngFor="let bouqut of bouqute index as i">
+        <div class="card">
+          <img class="img-fluid" src="assets/assets/images/big/img1.jpg" alt="">
+          <div class="card-body">
+            <h5 class="card-title">{{bouqut.title}}</h5>
+            <p class="card-text">This is a wider card with supporting text and below as a
+              natural lead-in to the additional content. This content is a little bit
+              longer.</p>
+            <h4>PRICE IS : {{bouqut.price}}</h4>
+            <h4>LIMIT OF MESSAGES IS : {{bouqut.limit}} MESSAGES.</h4>
+            <h4>LIMIT OF DAYS IS : {{bouqut.date}} DAYS.</h4>
+            <h4 class="text-lead">SOCAIL IN THE BOUQUTE IS :</h4>
+            <div *ngFor="let socail of bouqut.socail ">
+              <p class="card-text mb-3">{{socail.title}}</p>
+            </div>
+            <div class="text-center">
+              <button (click)="buy(bouqut._id,i)" class="btn btn-info">BUY NOW</button>
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- End Col -->
+    </div>
+  </div>
+</div>

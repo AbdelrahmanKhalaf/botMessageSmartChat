@@ -1,0 +1,40 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title mb-4">Socails</h4>
+        <button class="btn btn-primary" routerLink="add-new">Add New Socail</button>
+        <br>
+        <br>
+         <div class="table-responsive">
+          <table class="table table-bordered verticle-middle" style="min-width: 400px;">
+            <thead>
+              <tr>
+                <th scope="col">Name Socail</th>
+                <th scope="col">Language</th>
+                <th scope="col">Date Out</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let socail of socails">
+                <td>{{socail.title}}</td>
+                <td>{{socail.language}}</td>
+                <td>{{socail.dateOut | date:"short"}}</td>
+                <td>
+                  <span>
+                    <a href="javascript:void()" class="mr-4" data-toggle="tooltip" data-placement="top" title="Edit"><i
+                        class="fa fa-pencil color-muted"></i> </a>
+                    <a href="javascript:void()" data-toggle="tooltip" data-placement="top" title="Close"><i
+                        class="fa fa-close color-danger"></i></a>
+                  </span>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

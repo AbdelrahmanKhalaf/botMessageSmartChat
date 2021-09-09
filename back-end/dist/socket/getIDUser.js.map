@@ -1,0 +1,1 @@
+{"version":3,"file":"getIDUser.js","sourceRoot":"","sources":["../../src/socket/getIDUser.ts"],"names":[],"mappings":";;;AAEO,KAAK,UAAU,SAAS,CAAC,MAAc;IAE1C,MAAM,CAAC,EAAE,CAAC,MAAM,EAAE,CAAC,IAAS,EAAE,EAAE;QAC5B,OAAO,CAAC,GAAG,CAAC,2BAA2B,GAAG,IAAI,CAAC,MAAM,CAAC,CAAC;IAC3D,CAAC,CAAC,CAAC;AACP,CAAC;AALD,8BAKC"}

@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title mb-4">Bouquties</h4>
+        <button class="btn btn-primary" routerLink="add-new">ADD NEW BOUQUTE</button>
+        <br>
+        <br>
+        <div class="table-responsive">
+          <table class="table table-bordered verticle-middle" style="min-width: 400px;">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Sale</th>
+                <th scope="col">Socail</th>
+                <th scope="col">Limit OF Messages</th>
+                <th scope="col">Number OF Days</th>
+                <th scope="col">Action</th>
+
+
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let bouqut of bouqute">
+                <td>{{bouqut.title}}</td>
+                <td>
+                  {{bouqut.price}}
+                </td>
+                <td> {{bouqut.sale}} %</td>
+                <td>
+                  <thead>
+                    <tr>
+                      <th scope="col">Name Socail</th>
+                      <th scope="col">Date Out</th>
+
+                    </tr>
+                  </thead>
+            <tbody>
+              <tr *ngFor="let socail of bouqut.socail">
+                <td>{{socail.title}}</td>
+                <td>{{socail.dateOut | date:"short"}}</td>
+              </tr>
+            </tbody>
+
+
+            </td>
+            <td> {{bouqut.limit}} Message</td>
+            <td> {{bouqut.date}} Days</td>
+            <td>
+              <span>
+                <a href="javascript:void()" class="mr-4" data-toggle="tooltip" data-placement="top" title="Edit"><i
+                    class="fa fa-pencil color-muted"></i> </a>
+                <a href="javascript:void()" data-toggle="tooltip" data-placement="top" title="Close"><i
+                    class="fa fa-close color-danger"></i></a>
+              </span>
+            </td>
+            </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

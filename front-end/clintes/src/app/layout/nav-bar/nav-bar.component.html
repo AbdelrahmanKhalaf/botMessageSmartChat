@@ -1,0 +1,34 @@
+<div class="header">
+  <div class="header-content">
+    <div class="header-right">
+      <ul>
+        <li class="icons">
+          <a *ngIf="auth.getToken()" routerLink="/user/profile">
+            <i>profile</i>
+            <div class="pulse-css"></div>
+          </a>
+          <a *ngIf="auth.getToken()" routerLink="/user/chat">
+            <i>Messages</i>
+            <div class="pulse-css"></div>
+          </a>
+          <a *ngIf="!auth.getToken()" routerLink="/auth/login">
+            <i>Login</i>
+            <div class="pulse-css"></div>
+          </a>
+          <a *ngIf="!auth.getToken()" routerLink="/auth/register">
+            <i>register</i>
+            <div class="pulse-css"></div>
+          </a>
+          <a *ngIf="auth.getToken()" (click)="logout()" >
+            <i>Logout</i>
+            <div class="pulse-css"></div>
+          </a>
+          <a routerLink="/bouqute/all">
+            <i>Bouqute</i>
+            <div class="pulse-css"></div>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

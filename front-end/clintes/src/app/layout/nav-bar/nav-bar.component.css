@@ -1,0 +1,8 @@
+.header {
+  margin-left:0px;
+  margin-right:0px;
+  width: 100%;
+
+}
+[data-sidebar-style="full"] .header, [data-sidebar-style="overlay"] .header{
+}

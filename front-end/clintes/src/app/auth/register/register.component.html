@@ -1,0 +1,191 @@
+<div class="row">
+  <div class="col-xl-12">
+    <div class="card forms-card">
+      <div class="card-body">
+        <h4 class="card-title mb-4">Rrigster</h4>
+        <div class="basic-form">
+          <p *ngIf="errorMessage && !message" class="alert alert-danger">
+            {{ errorMessage }}
+          </p>
+          <p *ngIf="message" class="alert alert-success">
+            {{ message }}
+          </p>
+          <form *ngIf="!message" [formGroup]="form" (ngSubmit)="register()">
+          
+            <div class="form-group row align-items-center">
+              <label class="col-sm-3 col-form-label text-label">Name</label>
+              <div class="col-sm-9">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Name"
+                    name="name"
+                    id="validationDefaultUsername1"
+                    aria-describedby="validationDefaultUsername1"
+                    formControlName="name"
+                  />
+                  <span
+                    *ngIf="(name?.touched || errorMessage) && name?.invalid"
+                    class="text-danger"
+                  >
+                    <strong *ngIf="name?.errors?.required"
+                      >Please enter name</strong
+                    >
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row align-items-center">
+              <label class="col-sm-3 col-form-label text-label">Email</label>
+              <div class="col-sm-9">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Email"
+                    name="email"
+                    id="validationDefaultUsername1"
+                    aria-describedby="validationDefaultUsername1"
+                    formControlName="email"
+                  />
+                </div>
+                <span
+                  *ngIf="(email?.touched || errorMessage) && email?.invalid"
+                  class="text-danger"
+                >
+                  <strong *ngIf="email?.errors?.required"
+                    >Please enter email</strong
+                  >
+                </span>
+              </div>
+            </div>
+            <div class="form-group row align-items-center">
+              <label class="col-sm-3 col-form-label text-label">Phone</label>
+              <div class="col-sm-9">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="phone"
+                    id="validationDefaultUsername2"
+                    placeholder="Phone"
+                    aria-describedby="validationDefaultUsername2"
+                    formControlName="phone"
+                  />
+                  <span
+                    *ngIf="(phone?.touched || errorMessage) && phone?.invalid"
+                    class="text-danger"
+                  >
+                    <strong *ngIf="phone?.errors?.required"
+                      >Please enter phone</strong
+                    >
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row align-items-center">
+              <label class="col-sm-3 col-form-label text-label">Password</label>
+              <div class="col-sm-9">
+                <div class="input-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    name="password"
+                    id="validationDefaultUsername2"
+                    placeholder="Password"
+                    aria-describedby="validationDefaultUsername3"
+                    formControlName="password"
+                  />
+                </div>
+                <span
+                  *ngIf="
+                    (password?.touched || errorMessage) && password?.invalid
+                  "
+                  class="text-danger"
+                >
+                  <strong *ngIf="password?.errors?.required"
+                    >Please enter password</strong
+                  >
+                </span>
+              </div>
+            </div>
+            <div class="form-group row align-items-center">
+              <label class="col-sm-3 col-form-label text-label"
+                >confrime password</label
+              >
+              <div class="col-sm-9">
+                <div class="input-group">
+                  <input
+                    type="password"
+                    class="form-control"
+                    name="confirmPassword"
+                    id="validationDefaultUsername2"
+                    placeholder="confirm Password"
+                    aria-describedby="validationDefaultUsername4"
+                    formControlName="confirmPassword"
+                  />
+                </div>
+                <span
+                  *ngIf="
+                    (confirmPassword?.touched || errorMessage) &&
+                    confirmPassword?.invalid
+                  "
+                  class="text-danger"
+                >
+                  <strong *ngIf="confirmPassword?.errors?.required"
+                    >Please enter confirmPassword</strong
+                  >
+                </span>
+              </div>
+            </div>
+            <div class="form-group row align-items-center">
+              <label class="col-sm-3 col-form-label text-label">Address</label>
+              <div class="col-sm-9">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="address"
+                    id="validationDefaultUsername5"
+                    placeholder="Address"
+                    aria-describedby="validationDefaultUsername5"
+                    formControlName="address"
+                  />
+                  <span
+                    *ngIf="
+                      (address?.touched || errorMessage) && address?.invalid
+                    "
+                    class="text-danger"
+                  >
+                    <strong *ngIf="address?.errors?.required"
+                      >Please enter address</strong
+                    >
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input
+                  id="checkbox1"
+                  class="form-check-input styled-checkbox"
+                  type="checkbox"
+                />
+                <label for="checkbox1" class="form-check-label"
+                  >Check Me Out</label
+                >
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-form mr-2">
+              Submit
+            </button>
+            <button type="button" class="btn btn-light text-dark btn-form">
+              Cancel
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

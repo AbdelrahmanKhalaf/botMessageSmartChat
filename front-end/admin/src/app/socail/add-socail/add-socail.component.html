@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-xl-12">
+    <div class="card forms-card">
+      <div class="card-body">
+        <h4 class="card-title mb-4">Add New Socail</h4>
+        <div class="basic-form">
+          <p class="alert alert-danger" *ngIf="errorMessage">{{errorMessage}}</p>
+          <p class="alert alert-success" *ngIf="message">{{message}}</p>
+          <form [formGroup]="form" (ngSubmit)="save()">
+            <div class="form-group">
+              <label class="text-label">Title*</label>
+              <input type="email" formControlName="title" name="text" class="form-control" placeholder="Title" required>
+            </div>
+            <div class="form-group">
+              <label class="text-label">Limit*</label>
+              <input type="text" formControlName="limit" name="password" class="form-control"
+                placeholder="Limit Ex : 30 " required>
+            </div>
+            <div class="form-group">
+              <label class="text-label">Number Of Days*</label>
+              <input type="text" formControlName="date" name="password" class="form-control" placeholder="Days Ex : 30"
+                required>
+            </div>
+            <div class="form-group">
+              <label class="text-label">Language*</label>
+              <input type="text" formControlName="language" name="password" class="form-control"
+                placeholder="Language Ex : en" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-form mr-2">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
